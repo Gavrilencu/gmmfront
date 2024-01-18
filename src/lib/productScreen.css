@@ -1,0 +1,22 @@
+@media screen and (max-width: 600px) {
+  .news {
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-wrap: wrap !important;
+    flex-direction: column;
+    align-items: center !important;
+  }
+  .header {
+    width: 100% !important;
+  }
+  .descriptions {
+    width: 90% !important;
+    margin-top: 50px !important;
+  }
+  .detail {
+    margin-bottom: 50px;
+  }
+  .img {
+    width: 80% !important;
+  }
+}
