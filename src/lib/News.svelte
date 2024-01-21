@@ -1,18 +1,38 @@
 <script>
-  import { news } from "$lib/news.js";
+  import { onMount } from "svelte";
+  import Modal from "$lib/Modal.svelte";
+
+  let products = [];
+  let selectedProduct = null;
+
+  onMount(async () => {
+    const response = await fetch("/products/news");
+    products = await response.json();
+  });
+
+  function showProductDetails(product) {
+    selectedProduct = product;
+  }
+
+  function closeProductDetails() {
+    selectedProduct = null;
+  }
 </script>
 
 <main class="news">
-  <span class="text">News</span>
+  <span class="text">NOUTATI</span>
   <div class="newProducts">
-    {#each news as list}
-      <a href={`/news/${list.id}`} class="box">
-        <img class="imgprod" src={list.img} alt="" />
-        <span class="name">{list.name}</span>
-      </a>
+    {#each products as product}
+      <div class="box" on:click={() => showProductDetails(product)}>
+        <img class="imgprod" src={`/${product.image}`} alt="" />
+        <span class="name">{product.name}</span>
+      </div>
     {/each}
   </div>
 </main>
+{#if selectedProduct}
+  <Modal product={selectedProduct} onClose={closeProductDetails} />
+{/if}
 
 <style>
   .imgprod {
@@ -53,11 +73,12 @@
   }
   .text {
     width: 100%;
-    font-family: "Lato", sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
     display: flex;
     justify-content: center;
     font-size: 35px;
-    font-weight: 600;
+    font-weight: 500;
   }
   .news {
     width: 100%;

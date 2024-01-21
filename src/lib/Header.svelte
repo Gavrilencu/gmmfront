@@ -16,8 +16,9 @@ of Simple CSS Waves-->
         class="comp"
         style="margin-top: 40px;font-family: Lato, sans-serif;width:550px"
       >
-        Companie importatoare de medii nutriente,chromogene si echipamente de
-        laborator
+        Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
+        servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
+        echipament și consumabile de cea mai înaltă calitate.
       </h3>
       <!--Just the logo.. Don't mind this-->
     </div>
@@ -70,20 +71,30 @@ of Simple CSS Waves-->
 
   h1 {
     font-family: "Lato", sans-serif;
-    font-weight: 300;
-    letter-spacing: 2px;
-    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-size: 50px;
   }
 
   .header {
     position: relative;
     text-align: center;
-    background: linear-gradient(
-      60deg,
-      rgb(129, 214, 245) 0%,
-      rgb(20, 17, 169) 100%
-    );
+    /* Adăugați calea către imaginea dorită aici */
+    background-size: cover; /* Acest lucru asigură că imaginea de fundal va acoperi întregul container */
     color: white;
+    transform: scaleX(1);
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./img/bk.jpg") no-repeat center center;
+    background-size: cover;
+    transform: scaleX(-1);
+    z-index: -1; /* Asigurați-vă că imaginea de fundal este sub conținut */
   }
 
   .inner-header {

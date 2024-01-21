@@ -1,73 +1,113 @@
 <script>
   import logo from "$lib/img/logo.png";
-  import menu from "$lib/img/menu.png";
-  import menuwhite from "$lib/img/menuwhite.png";
+  import arrow from "$lib/img/bottom.png";
+  import menu from "$lib/img/men.png";
   import close from "$lib/img/close.png";
-  let m = false;
-  function openmenu() {
-    m = !m;
+  import { leftmenu } from "$lib/index.js";
+  import { goto } from "$app/navigation";
+  let product = false;
+  $: console.log($leftmenu);
+  function openclosemenu() {
+    $leftmenu = !$leftmenu;
   }
+  // // categorii :medii de cultura,cromogene,teste pcr,echipamente de laborator,despre noi,produse,contacte,parteneri
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <main class="subheader">
   <a href="/" class="home"><img src={logo} class="logo" alt="home/logo" /></a>
-  <span class="list">Produse</span>
- {#if m}
-    <img src={close} alt="" class="close" on:click={openmenu} />
-  {:else}
-    <img src={menuwhite} alt="" class="menu" on:click={openmenu} />
+  <img src={menu} alt="" class="menuicon" on:click={openclosemenu} />
+  <nav class="nav">
+    <div
+      class="dual"
+      on:mouseenter={() => {
+        product = true;
+      }}
+    >
+      <span class="list">PRODUSE</span>
+      <img src={arrow} alt="" class="icon" />
+    </div>
+
+    <span class="list">DESPRE NOI</span>
+    <span class="list">PARTENERI</span>
+    <span class="list">CONTACTE</span>
+  </nav>
+  {#if product}
+    <div
+      class="product flip-in-hor-top"
+      on:mouseleave={() => {
+        product = false;
+      }}
+    >
+      <span class="listmenu">MEDII DE CULTURA</span>
+      <span
+        class="listmenu"
+        on:click={() => {
+          goto("/cromogen");
+        }}>MEDII DE CULTURA CROMOGENE</span
+      >
+      <span class="listmenu">TESTE PCR</span>
+      <span class="listmenu">ECHIPAMENTE DE LABORATOR</span>
+    </div>
   {/if}
 </main>
- <!--
-{#if m}
-  <main class="menuopen">
-    <a href="/" class="list">Noutati</a>
-    <a href="/cromogen" class="list">Mediul Chromogen</a>
-    <a href="" class="list">Mediul Nutrient</a>
-    <a href="/laborator" class="list">Echipament de Laborator</a>
-    <a href="" class="list">Producatori</a>
-  </main>
-{/if}
--->
-
 
 <style>
-  .list {
+  .menuicon {
+    width: 50px;
+    display: none;
+  }
+  .listmenu {
     width: 100%;
-    height: 100%;
-    padding: 20px;
-    text-decoration: none;
+    height: 40px;
     display: flex;
     align-items: center;
-    font-family: "Lato", sans-serif;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    transition: 0.5s;
-  }
-  .list:hover {
-    background: linear-gradient(
-      60deg,
-      rgb(20, 17, 169) 0%,
-      rgb(129, 214, 245) 100%
-    );
+    padding-left: 12px;
     color: white;
+    transition: 0.5s;
+    cursor: pointer;
   }
-  .menuopen {
+  .listmenu:hover {
+    background-color: white;
+    color: #114640;
+  }
+  .product {
+    overflow: hidden;
+    width: 250px;
+    height: 160px;
+    background: linear-gradient(60deg,  #02b68f 0%,#114640 100%);
+    right: 360px;
+    top: 80px;
     position: fixed;
-    z-index: 1;
     display: flex;
     flex-direction: column;
-    right: 0;
-    margin-top: 80px;
-    align-items: center;
-    justify-content: space-around;
-    position: fixed;
-    width: 40vh;
-    height: 50vh;
-    background-color: white;
+    align-items: start;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.363);
+    border-radius: 10px;
   }
+  .dual {
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    width: 30px;
+  }
+  * {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  .list {
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
   .subheader {
     position: fixed;
     z-index: 1;
@@ -77,22 +117,48 @@
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-    background: linear-gradient(
-      60deg,
-      rgb(129, 214, 245) 0%,
-      rgb(20, 17, 169) 100%
-    );
+    background: linear-gradient(60deg, #02b68f 0%, #114640 100%);
   }
   .logo {
     width: 150px;
   }
-  .menu {
-    width: 50px;
-    z-index: 1;
+
+  .flip-in-hor-top {
+    -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
-  .close {
-    width: 30px;
-    z-index: 1;
+
+  @-webkit-keyframes flip-in-hor-top {
+    0% {
+      -webkit-transform: rotateX(-80deg);
+      transform: rotateX(-80deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes flip-in-hor-top {
+    0% {
+      -webkit-transform: rotateX(-80deg);
+      transform: rotateX(-80deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .nav {
+      display: none;
+    }
+    .menuicon {
+      display: block;
+    }
   }
 </style>
