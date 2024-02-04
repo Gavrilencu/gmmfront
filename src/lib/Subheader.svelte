@@ -3,21 +3,34 @@
   import arrow from "$lib/img/bottom.png";
   import menu from "$lib/img/men.png";
   import close from "$lib/img/close.png";
-  import { leftmenu } from "$lib/index.js";
+
+  import { openMenu } from "$lib/index.js";
+
   import { goto } from "$app/navigation";
   let product = false;
-  $: console.log($leftmenu);
-  function openclosemenu() {
-    $leftmenu = !$leftmenu;
-  }
+
   // // categorii :medii de cultura,cromogene,teste pcr,echipamente de laborator,despre noi,produse,contacte,parteneri
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <main class="subheader">
-  <a href="/" class="home"><img src={logo} class="logo" alt="home/logo" /></a>
-  <img src={menu} alt="" class="menuicon" on:click={openclosemenu} />
+  <img
+    src={logo}
+    class="logo"
+    on:click={() => {
+      goto("/");
+    }}
+  />
+
+  <img
+    src={menu}
+    alt=""
+    class="menuicon"
+    on:click={() => {
+      openMenu.set(true);
+    }}
+  />
   <nav class="nav">
     <div
       class="dual"
@@ -30,7 +43,7 @@
     </div>
 
     <span class="list">DESPRE NOI</span>
-    <span class="list">PARTENERI</span>
+    <a href="/partner" class="list">PARTENERI</a>
     <span class="list">CONTACTE</span>
   </nav>
   {#if product}
@@ -57,6 +70,8 @@
   .menuicon {
     width: 50px;
     display: none;
+    cursor: pointer;
+    z-index: 100;
   }
   .listmenu {
     width: 100%;
@@ -76,7 +91,7 @@
     overflow: hidden;
     width: 250px;
     height: 160px;
-    background: linear-gradient(60deg,  #02b68f 0%,#114640 100%);
+    background: linear-gradient(60deg, #02b68f 0%, #114640 100%);
     right: 360px;
     top: 80px;
     position: fixed;
@@ -102,6 +117,7 @@
     color: white;
     margin-left: 20px;
     cursor: pointer;
+    text-decoration: none;
   }
   .nav {
     display: flex;
@@ -121,6 +137,7 @@
   }
   .logo {
     width: 150px;
+    cursor: pointer;
   }
 
   .flip-in-hor-top {

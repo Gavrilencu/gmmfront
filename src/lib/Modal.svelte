@@ -120,11 +120,17 @@
     @media screen and (max-width: 900px) {
         .modal-content {
             flex-direction: column;
-            overflow: hidden;
+            overflow: auto;
             width: 80%;
+            height: 90vh;
         }
         .infoblock {
-            width: 90%;
+            width: 100%;
+        }
+        .imageproduct {
+            width: 100%;
+            margin-top: 20px;
+            height: auto;
         }
     }
 </style>

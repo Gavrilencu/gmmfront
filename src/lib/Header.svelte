@@ -44,7 +44,7 @@ of Simple CSS Waves-->
             xlink:href="#gentle-wave"
             x="48"
             y="0"
-            fill="rgba(255,255,255,0.7"
+            fill="rgba(255,255,255,0.7)"
           />
           <use
             xlink:href="#gentle-wave"
@@ -159,6 +159,9 @@ of Simple CSS Waves-->
 
     h1 {
       font-size: 24px;
+    }
+    .header {
+      width: 100%;
     }
   }
 </style>

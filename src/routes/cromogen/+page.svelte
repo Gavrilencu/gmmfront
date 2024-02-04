@@ -70,8 +70,9 @@
     width: 300px;
     text-decoration: none;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(24, 96, 221, 0.415);
+    box-shadow: 0px 0px 4px rgba(29, 141, 122, 0.685);
     border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.205);
     height: 350px;
     display: flex;
     flex-direction: column;

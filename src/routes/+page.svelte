@@ -5,74 +5,26 @@
   import News from "../lib/News.svelte";
   import Footer from "../lib/Footer.svelte";
   import Info from "../lib/Info.svelte";
-
-  import { leftmenu } from "$lib/index.js";
-  import { goto } from "$app/navigation";
+  import LeftMenu from "$lib/LeftMenu.svelte";
+  import { openMenu } from "$lib/index.js";
+  import HomeBlock from "../lib/HomeBlock.svelte";
+  $: console.log($openMenu);
 
   // categorii :medii de cultura,cromogene,teste pcr,echipamente de laborator,despre noi,produse,contacte,parteneri
 </script>
 
-{#if $leftmenu}
-  <div class="menu slide-in-left">
-    <span class="list">MEDII DE CULTURA</span>
-    <span
-      class="list"
-      on:click={() => {
-        goto("/cromogen");
-        leftmenu.set(false);
-      }}>MEDII DE CULTURA CROMOGENE</span
-    >
-    <span class="list">TEST PCR</span>
-    <span class="list">ECHIPAMENTE DE LABORATOR</span>
-    <span class="list">DESPRE NOI</span>
-    <span class="list">CONTACTE</span>
-    <span class="list">PARTENERI</span>
-  </div>
-{/if}
-<div class="info"></div>
 <main class="app">
   <div class="header">
     <Header />
   </div>
   <Subheader />
+  <LeftMenu />
+  <HomeBlock />
   <News />
 </main>
 <Footer />
 
 <style>
-  .list:hover {
-    background-color: white;
-    color: #114640;
-  }
-  * {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-weight: 600;
-  }
-  .list {
-    margin-block: 20px;
-    width: 100%;
-    padding-left: 20px;
-    padding-block: 10px;
-  }
-  .menu {
-    width: 80%;
-    height: 100vh;
-    z-index: 5;
-    background: linear-gradient(60deg, #114640 0%, #02b68f 100%);
-    color: white;
-
-    position: fixed;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .info {
-    position: fixed;
-    z-index: 1;
-    top: 50%;
-  }
   .app {
     width: 100%;
     display: flex;
