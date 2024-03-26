@@ -2,8 +2,65 @@
   import medii from "$lib/img/teste.webp";
   import teste from "$lib/img/teste.jpeg";
   import echipamente from "$lib/img/echipamente.png";
+  import logo from "$lib/img/logo.png";
 </script>
 
+<div class="container py-4">
+  <header class="pb-3 mb-4 border-bottom">
+    <a
+      href="/"
+      class="d-flex align-items-center text-dark text-decoration-none"
+    >
+      <img src={logo} class="me-2" alt="" style="width: 120px;" />
+      <span class="fs-4">GMM Biotechnology</span>
+    </a>
+  </header>
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">GMM BIOTECHNOLOGY</h1>
+      <p class="col-md-8 fs-4">
+        Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
+        servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
+        echipament și consumabile de cea mai înaltă calitate.
+      </p>
+      <button class="btn btn-primary btn-lg" type="button"
+        >Contacteaza-ne</button
+      >
+    </div>
+  </div>
+
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>GMM BIOTECHNOLOGY</h2>
+        <p>
+          Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
+          servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
+          echipament și consumabile de cea mai înaltă calitate.
+        </p>
+        <button class="btn btn-outline-light" type="button"
+          >Example button</button
+        >
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>GMM BIOTECHNOLOGY</h2>
+        <p>
+          Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
+          servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
+          echipament și consumabile de cea mai înaltă calitate.
+        </p>
+        <button class="btn btn-outline-secondary" type="button"
+          >Example button</button
+        >
+      </div>
+    </div>
+  </div>
+
+  <footer class="pt-3 mt-4 text-muted border-top">© 2024</footer>
+</div>
 <main class="infoblock">
   <h2 class="infoName">Ce oferim noi?</h2>
   <div class="block">
@@ -41,12 +98,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 10px;
     text-align: center;
   }
   .imgProdus {
     width: 100%;
     height: 250px;
-    border-radius: 20px;
+    border-radius: 5px;
     object-fit: cover;
   }
   .nameOfProdus {
@@ -63,8 +121,8 @@
     align-items: center;
     justify-content: space-between;
     margin-inline: 50px;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 5px;
+
     background-color: white;
   }
   .block {
@@ -87,9 +145,7 @@
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    margin-top: 20px;
-    padding-block: 50px;
-    background-color: aliceblue;
+    margin-top: 10px;
   }
   * {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",

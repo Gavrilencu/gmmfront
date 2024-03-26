@@ -14,168 +14,46 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<main class="subheader">
-  <img
-    src={logo}
-    class="logo"
-    on:click={() => {
-      goto("/");
-    }}
-  />
-
-  <img
-    src={menu}
-    alt=""
-    class="menuicon"
-    on:click={() => {
-      openMenu.set(true);
-    }}
-  />
-  <nav class="nav">
-    <div
-      class="dual"
-      on:mouseenter={() => {
-        product = true;
-      }}
+<div class="container">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center col-md-4 mb-1 mb-md-1 text-dark text-decoration-none"
     >
-      <span class="list">PRODUSE</span>
-      <img src={arrow} alt="" class="icon" />
-    </div>
+      <img src={logo} class="bi me-2" alt="" style="width: 120px;" />
+    </a>
 
-    <span class="list">DESPRE NOI</span>
-    <a href="/partner" class="list">PARTENERI</a>
-    <span class="list">CONTACTE</span>
-  </nav>
-  {#if product}
-    <div
-      class="product flip-in-hor-top"
-      on:mouseleave={() => {
-        product = false;
-      }}
-    >
-      <span class="listmenu">MEDII DE CULTURA</span>
-      <span
-        class="listmenu"
-        on:click={() => {
-          goto("/cromogen");
-        }}>MEDII DE CULTURA CROMOGENE</span
-      >
-      <span class="listmenu">TESTE PCR</span>
-      <span class="listmenu">ECHIPAMENTE DE LABORATOR</span>
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          data-bs-toggle="dropdown"
+          href="#"
+          role="button"
+          aria-expanded="false">Dropdown</a
+        >
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="nav-link px-2 link-dark">Contacte</a></li>
+      <li>
+        <a href="/partner" class="nav-link px-2 link-dark">Parteneri</a>
+      </li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn btn-outline-primary me-2">Login</button>
     </div>
-  {/if}
-</main>
+  </header>
+</div>
 
 <style>
-  .menuicon {
-    width: 50px;
-    display: none;
-    cursor: pointer;
-    z-index: 100;
-  }
-  .listmenu {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    padding-left: 12px;
-    color: white;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-  .listmenu:hover {
-    background-color: white;
-    color: #114640;
-  }
-  .product {
-    overflow: hidden;
-    width: 250px;
-    height: 160px;
-    background: linear-gradient(60deg, #02b68f 0%, #114640 100%);
-    right: 360px;
-    top: 80px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-evenly;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.363);
-    border-radius: 10px;
-  }
-  .dual {
-    display: flex;
-    align-items: center;
-  }
-  .icon {
-    width: 30px;
-  }
-  * {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-  }
-  .list {
-    color: white;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .nav {
-    display: flex;
-    align-items: center;
-  }
-
-  .subheader {
-    position: fixed;
-    z-index: 1;
-    padding-inline: 150px;
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(60deg, #02b68f 0%, #114640 100%);
-  }
-  .logo {
-    width: 150px;
-    cursor: pointer;
-  }
-
-  .flip-in-hor-top {
-    -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
-    animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-
-  @-webkit-keyframes flip-in-hor-top {
-    0% {
-      -webkit-transform: rotateX(-80deg);
-      transform: rotateX(-80deg);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-  @keyframes flip-in-hor-top {
-    0% {
-      -webkit-transform: rotateX(-80deg);
-      transform: rotateX(-80deg);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-  @media screen and (max-width: 1100px) {
-    .nav {
-      display: none;
-    }
-    .menuicon {
-      display: block;
-    }
-  }
 </style>

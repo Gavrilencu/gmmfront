@@ -48,7 +48,7 @@
     width: 300px;
     height: 300px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     margin: 20px;
     cursor: pointer;
@@ -56,7 +56,7 @@
     transition: 0.3s;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 4px #114640;
+    box-shadow: 0px 0px 1px #114640;
   }
   .block:hover {
     transform: scale3d(1.1, 1.1, 0.3);

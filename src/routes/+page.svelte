@@ -13,11 +13,12 @@
   // categorii :medii de cultura,cromogene,teste pcr,echipamente de laborator,despre noi,produse,contacte,parteneri
 </script>
 
+<Subheader />
 <main class="app">
   <div class="header">
     <Header />
   </div>
-  <Subheader />
+
   <LeftMenu />
   <HomeBlock />
   <News />

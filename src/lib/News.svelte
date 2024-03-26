@@ -56,8 +56,8 @@
     width: 300px;
     text-decoration: none;
     overflow: hidden;
-    box-shadow: 0px 0px 4px rgba(29, 141, 122, 0.685);
-    border-radius: 20px;
+    box-shadow: 0px 0px 1px rgba(29, 141, 122, 0.685);
+    border-radius: 5px;
     background-color: rgba(240, 248, 255, 0.205);
     height: 350px;
     display: flex;
@@ -69,7 +69,7 @@
     cursor: pointer;
   }
   .box:hover {
-    box-shadow: 0px 0px 10px rgba(24, 221, 47, 0.415);
+    box-shadow: 0px 0px 4px rgba(24, 221, 47, 0.415);
     transform: scale3d(1.05, 1.05, 0.5);
   }
   .text {
