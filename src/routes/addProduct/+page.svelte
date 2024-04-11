@@ -10,7 +10,7 @@
         formData.append("image", image);
 
         try {
-            const response = await fetch("/products", {
+            const response = await fetch("/api/products", {
                 method: "POST",
                 body: formData,
             });
@@ -19,7 +19,16 @@
                 // Produsul a fost adăugat cu succes
                 const result = await response.json();
                 console.log(result);
-                // Resetați formularul sau redirecționați utilizatorul, etc.
+
+                // Afiseaza notificarea de succes
+                alert("Produsul a fost salvat cu succes!");
+
+                // Resetați formularul
+                category = "";
+                name = "";
+                code = "";
+                description = "";
+                image = null;
             } else {
                 // Tratați erorile serverului
                 console.error("Eroare la adăugarea produsului");
@@ -32,53 +41,68 @@
 </script>
 
 <nav>
+    <a href="/">Pagina principala</a>
     <a href="getProducts">Vizualizați Produsele</a>
     <a href="addProduct">Adaugă Produs</a>
-    <a href="updateProduct">Actualizează Produs</a>
-    <a href="deleteProduct">Șterge Produs</a>
+
 </nav>
 
-<h1 class="adaugaprod">Adauga Produse</h1>
-<form on:submit|preventDefault={handleSubmit} class="product-form">
-    <div class="form-group">
-        <input type="text" bind:value={category} placeholder="Categorie" />
-    </div>
-    <div class="form-group">
-        <input type="text" bind:value={name} placeholder="Nume" />
-    </div>
-    <div class="form-group">
-        <input type="text" bind:value={code} placeholder="Cod" />
-    </div>
-    <div class="form-group">
-        <textarea bind:value={description} placeholder="Descriere"></textarea>
-    </div>
-    <div class="form-group">
-        <input
-            type="file"
-            accept="image/*"
-            on:change={(e) => (image = e.target.files[0])}
-        />
-    </div>
-    <button type="submit" class="submit-button">Salvează Produs</button>
-</form>
+<div class="container">
+    <h1 class="adaugaprod">Adauga Produse</h1>
+    <form on:submit|preventDefault={handleSubmit} class="product-form">
+        <div class="form-group">
+            <label for="category">Categorie:</label>
+            <input type="text" id="category" bind:value={category} placeholder="Categorie" required />
+        </div>
+        <div class="form-group">
+            <label for="name">Nume:</label>
+            <input type="text" id="name" bind:value={name} placeholder="Nume" required />
+        </div>
+        <div class="form-group">
+            <label for="code">Cod:</label>
+            <input type="text" id="code" bind:value={code} placeholder="Cod" />
+        </div>
+        <div class="form-group">
+            <label for="description">Descriere:</label>
+            <textarea id="description" bind:value={description} placeholder="Descriere" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Imagine:</label>
+            <input type="file" id="image" accept="image/*" on:change={(e) => (image = e.target.files[0])} />
+        </div>
+        <button type="submit" class="submit-button">Salvează Produs</button>
+    </form>
+</div>
 
 <style>
-    .adaugaprod {
-        width: 100%;
-        text-align: center;
-    }
-    .product-form {
-        max-width: 600px;
+    .container {
+        max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+    }
+
+    .adaugaprod {
+        text-align: center;
+    }
+
+    .product-form {
         background: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
+        padding: 20px;
     }
+
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
-    input,
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
     textarea {
         width: 100%;
         padding: 10px;
@@ -86,10 +110,11 @@
         border: 1px solid #ddd;
         box-sizing: border-box;
     }
+
     textarea {
-        height: 100px;
         resize: vertical;
     }
+
     .submit-button {
         background-color: #007bff;
         color: white;
@@ -99,6 +124,7 @@
         cursor: pointer;
         transition: background-color 0.2s;
     }
+
     .submit-button:hover {
         background-color: #0056b3;
     }

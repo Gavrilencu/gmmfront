@@ -50,7 +50,7 @@
     <!--Waves end-->
   </div>
 
-  <span class="copy">Copyright 2023 by Gavrilencu Grigore</span>
+  <span class="copy">Copyright 2024 by Gavrilencu Grigore</span>
 </div>
 
 <style>

@@ -26,32 +26,30 @@
     </a>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+      <li>
+        <a href="/partner" class="nav-link px-2 link-dark">Despre noi</a>
+      </li>
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
           data-bs-toggle="dropdown"
           href="#"
           role="button"
-          aria-expanded="false">Dropdown</a
+          aria-expanded="false">Produse</a
         >
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="/cromogen">Medii cromogene</a></li>
+          <li><a class="dropdown-item" href="#">Medii nutriente</a></li>
+          <li><a class="dropdown-item" href="#">Echipamente laborator</a></li>
           <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
+          <li><a class="dropdown-item" href="/teste">Teste PCR</a></li>
         </ul>
       </li>
-      <li><a href="#" class="nav-link px-2 link-dark">Contacte</a></li>
+      <li><a href="/contacte" class="nav-link px-2 link-dark">Contacte</a></li>
       <li>
         <a href="/partner" class="nav-link px-2 link-dark">Parteneri</a>
       </li>
     </ul>
-
-    <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2">Login</button>
-    </div>
   </header>
 </div>
 

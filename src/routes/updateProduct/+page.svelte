@@ -3,7 +3,7 @@
     let category, name, code, description;
 
     async function updateProduct() {
-        const response = await fetch(`/products/${productId}`, {
+        const response = await fetch(`/api/products/${productId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

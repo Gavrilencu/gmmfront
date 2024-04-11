@@ -20,9 +20,9 @@
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">GMM BIOTECHNOLOGY</h1>
       <p class="col-md-8 fs-4">
-        Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
-        servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
-        echipament și consumabile de cea mai înaltă calitate.
+        Oferim un portofoliu extins de produse, inclusiv reactive, kituri de
+        testare și echipamente de laborator, pentru a satisface nevoile variate
+        ale spitalelor și laboratoarelor din Moldova.
       </p>
       <button class="btn btn-primary btn-lg" type="button"
         >Contacteaza-ne</button
@@ -35,12 +35,12 @@
       <div class="h-100 p-5 text-white bg-dark rounded-3">
         <h2>GMM BIOTECHNOLOGY</h2>
         <p>
-          Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
-          servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
-          echipament și consumabile de cea mai înaltă calitate.
+          Ne străduim să fim partenerul de încredere al spitalelor și
+          laboratoarelor din Moldova, oferindu-le soluții integrate și suport
+          tehnic specializat pentru implementarea eficientă a testelor PCR.
         </p>
-        <button class="btn btn-outline-light" type="button"
-          >Example button</button
+        <a href="/teste" class="btn btn-outline-light" type="button"
+          >Teste PCR</a
         >
       </div>
     </div>
@@ -48,12 +48,12 @@
       <div class="h-100 p-5 bg-light border rounded-3">
         <h2>GMM BIOTECHNOLOGY</h2>
         <p>
-          Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
-          servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
-          echipament și consumabile de cea mai înaltă calitate.
+          Suntem partenerul ideal pentru instituțiile medicale din Moldova,
+          furnizând produse de cea mai înaltă calitate, precum și asistență
+          tehnică specializată.
         </p>
-        <button class="btn btn-outline-secondary" type="button"
-          >Example button</button
+        <a href="/cromogen" class="btn btn-outline-secondary" type="button"
+          >Medii de cultura</a
         >
       </div>
     </div>

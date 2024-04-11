@@ -2,7 +2,7 @@
     export let productId;
 
     async function deleteProduct() {
-        const response = await fetch(`/products/${productId}`, {
+        const response = await fetch(`/api/products/${productId}`, {
             method: "DELETE",
         });
 

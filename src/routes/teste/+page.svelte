@@ -8,7 +8,7 @@
   let selectedProduct = null;
 
   onMount(async () => {
-    const response = await fetch("/api/products/chromagar");
+    const response = await fetch("/api/products/pcr");
     products = await response.json();
   });
 
@@ -19,13 +19,14 @@
   function closeProductDetails() {
     selectedProduct = null;
   }
+
 </script>
 
-<main class="cr">
-  <Subheader />
-  <Header />
-</main>
-<span class="text">MEDIUL DE CULTURA CROMOGEN</span>
+
+
+<Subheader />
+<Header />
+<span class="text">Teste PCR</span>
 <div class="newProducts">
   {#each products as product}
     <div class="box" on:click={() => showProductDetails(product)}>
@@ -63,6 +64,7 @@
     text-align: center;
     width: 100%;
     font-family: "Lato", sans-serif;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 10px;
   }
@@ -73,7 +75,7 @@
     box-shadow: 0px 0px 4px rgba(29, 141, 122, 0.685);
     border-radius: 20px;
     background-color: rgba(240, 248, 255, 0.205);
-    height: 350px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     margin: 25px;

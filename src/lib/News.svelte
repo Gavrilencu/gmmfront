@@ -6,7 +6,7 @@
   let selectedProduct = null;
 
   onMount(async () => {
-    const response = await fetch("/products/news");
+    const response = await fetch("/api/products/news");
     products = await response.json();
   });
 
