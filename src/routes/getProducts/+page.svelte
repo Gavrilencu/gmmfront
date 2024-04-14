@@ -1,13 +1,17 @@
 <script>
     import { onMount } from "svelte";
-    import Modal from "../../lib/Modal.svelte";
+    import EditModal from "../../lib/EditModal.svelte"; // Schimbă importul la noua componentă
 
     let products = [];
     let selectedProduct = null;
 
-    onMount(async () => {
+    async function fetchProducts() {
         const response = await fetch("/api/products");
         products = await response.json();
+    }
+
+    onMount(() => {
+        fetchProducts();
     });
 
     function showProductDetails(product) {
@@ -16,6 +20,39 @@
 
     function closeProductDetails() {
         selectedProduct = null;
+        fetchProducts(); // Reîncarcă produsele după închiderea modalului
+    }
+
+    function handleSave({ detail }) {
+        const updatedProduct = detail.product;
+        updateProduct(updatedProduct).then(() => {
+            closeProductDetails(); // Se va declanșa reîncărcarea listei de produse
+        });
+    }
+
+    async function updateProduct(product) {
+        const formData = new FormData();
+        // Populăm formData cu proprietățile produsului, inclusiv imaginea dacă este cazul
+        formData.append('name', product.name);
+        formData.append('code', product.code);
+        formData.append('description', product.description);
+        formData.append('category', product.category);
+        if (product.image instanceof File) {
+            formData.append('image', product.image);
+        }
+
+        try {
+            const response = await fetch(`/api/products/${product.id}`, {
+                method: 'PUT',
+                body: formData,
+            });
+            if (!response.ok) {
+                throw new Error('Failed to update product');
+            }
+            return response.json();
+        } catch (e) {
+            console.error('Error updating product', e);
+        }
     }
 </script>
 
@@ -41,7 +78,7 @@
 {/each}
 
 {#if selectedProduct}
-    <Modal product={selectedProduct} onClose={closeProductDetails} />
+    <EditModal product={selectedProduct} on:close={closeProductDetails} on:save={handleSave} />
 {/if}
 
 <style>
@@ -54,6 +91,7 @@
     .product-box {
         border: 1px solid #ccc;
         padding: 10px;
+        overflow: hidden;
         cursor: pointer;
         transition: background-color 0.3s;
     }
