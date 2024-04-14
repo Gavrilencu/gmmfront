@@ -29,10 +29,12 @@
 <span class="text">Teste PCR</span>
 <div class="newProducts">
   {#each products as product}
-    <div class="box" on:click={() => showProductDetails(product)}>
-      <img class="imgprod" src={`/${product.image}`} alt="" />
-      <span class="name">{product.name}</span>
-    </div>
+  <div class="card" style="width: 18rem;margin:15px; justify-content:space-between;" on:click={() => showProductDetails(product)} type="button" data-toggle="modal" data-target="#exampleModalCenter">
+    <img src={`/${product.image}`} class="card-img-top" alt="...">
+
+      <p class="card-text" style="text-align: center;">{product.name}</p>
+ 
+  </div>
   {/each}
 </div>
 {#if selectedProduct}
@@ -124,5 +126,12 @@
       transform: translateZ(0);
       opacity: 1;
     }
+  }
+  .card {
+    transition: 0.3s !important;
+  }
+  .card:hover {
+    box-shadow: 0px 0px 10px rgba(24, 221, 47, 0.415);
+    transform: scale3d(1.03, 1.03, 0.3);
   }
 </style>
