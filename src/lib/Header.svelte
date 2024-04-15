@@ -1,167 +1,54 @@
 <script>
+  import image1 from "$lib/img/image1.jpg";
+  import image2 from "$lib/img/image.jpg";
+  import image3 from "$lib/img/image3.jpg";
 </script>
 
-<main class="header">
-  <!--Hey! This is the original version
-of Simple CSS Waves-->
-
-  <div class="header">
-    <!--Content before waves-->
-    <div
-      class="inner-header flex"
-      style="display: flex; flex-direction:column; "
-    >
-      <h1 style="font-weight:700">GMM BIOTECHNOLOGY</h1>
-      <h3
-        class="comp"
-        style="margin-top: 40px;font-family: Lato, sans-serif;width:550px"
-      >
-        Oferim spitalelor și laboratoarelor din R. Moldova o gama variata de
-        servicii, furnizând teste PCR, reactive, medii de cultură cromogene,
-        echipament și consumabile de cea mai înaltă calitate.
-      </h3>
-      <!--Just the logo.. Don't mind this-->
-    </div>
-
-    <!--Waves Container-->
-    <div>
-      <svg
-        class="waves"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shape-rendering="auto"
-      >
-        <defs>
-          <path
-            id="gentle-wave"
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          />
-        </defs>
-        <g class="parallax">
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="0"
-            fill="rgba(255,255,255,0.7)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="3"
-            fill="rgba(255,255,255,0.5)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="5"
-            fill="rgba(255,255,255,0.3)"
-          />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-        </g>
-      </svg>
-    </div>
-    <!--Waves end-->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-</main>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src={image1} class="d-block w-100 imageconfig" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src={image2} class="d-block w-100 imageconfig" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src={image3} class="d-block w-100 imageconfig" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 <style>
-  @import url(//fonts.googleapis.com/css?family=Lato:300:400);
-
-  h1 {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    letter-spacing: 5px;
-    font-size: 50px;
+  .carousel-inner, .carousel-item, .imageconfig {
+    height: 70vh !important;
+    object-fit: cover;
   }
-
-  .header {
-    position: relative;
-    text-align: center;
-    /* Adăugați calea către imaginea dorită aici */
-    background-size: cover; /* Acest lucru asigură că imaginea de fundal va acoperi întregul container */
-    color: white;
-    transform: scaleX(1);
-  }
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("./img/bk.jpg") no-repeat center center;
-    background-size: cover;
-    transform: scaleX(-1);
-    z-index: -1; /* Asigurați-vă că imaginea de fundal este sub conținut */
-  }
-
-  .inner-header {
-    height: 65vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .flex {
-    /*Flexbox for containers*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .waves {
-    position: relative;
-    width: 100%;
-    height: 15vh;
-    margin-bottom: -7px; /*Fix for safari gap*/
-    min-height: 100px;
-    max-height: 150px;
-  }
-
-  /* Animation */
-
-  .parallax > use {
-    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-  }
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-      transform: translate3d(-90px, 0, 0);
-    }
-    100% {
-      transform: translate3d(85px, 0, 0);
-    }
-  }
-  /*Shrinking for mobile*/
-  @media (max-width: 768px) {
-    .waves {
-      height: 40px;
-      min-height: 40px;
-    }
-
-    h1 {
-      font-size: 24px;
-    }
-    .header {
-      width: 100%;
-    }
+  .imageconfig {
+    width: 100% !important;
   }
 </style>

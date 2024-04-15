@@ -6,15 +6,7 @@
 </script>
 
 <div class="container py-4">
-  <header class="pb-3 mb-4 border-bottom">
-    <a
-      href="/"
-      class="d-flex align-items-center text-dark text-decoration-none"
-    >
-      <img src={logo} class="me-2" alt="" style="width: 120px;" />
-      <span class="fs-4">GMM Biotechnology</span>
-    </a>
-  </header>
+
 
   <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
