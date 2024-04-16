@@ -50,7 +50,7 @@
     <!--Waves end-->
   </div>
 
-  <span class="copy">Copyright 2024 by Gavrilencu Grigore</span>
+  <span class="copy">© Copyright  2024 by 2G Technology</span>
 </div>
 
 <style>
@@ -67,8 +67,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    
   }
   .header {
     position: relative;

@@ -2,131 +2,162 @@
   import Header from "./../../lib/Header.svelte";
   import Subheader from "../../lib/Subheader.svelte";
   import Footer from "../../lib/Footer.svelte";
+  import phone from "../../lib/img/phone.png";
+  import mail from "../../lib/img/email.png";
+  import address from "../../lib/img/address.png";
 </script>
 
 <Subheader />
 <Header />
-<div class="content">
-  <div class="container">
-    <div class="row align-items-stretch no-gutters contact-wrap">
-      <div class="col-md-8">
-        <div class="form h-100">
-          <h3>Lasa un mesaj iar noi va contactam.</h3>
-          <form
-            class="mb-5"
-            method="post"
-            id="contactForm"
-            name="contactForm"
-            novalidate="novalidate"
-          >
-            <div class="row">
-              <div class="col-md-6 form-group mb-5">
-                <label for="" class="col-form-label">Nume *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="name"
-                  id="name"
-                  placeholder="..."
-                />
-              </div>
-              <div class="col-md-6 form-group mb-5">
-                <label for="" class="col-form-label">Mail *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  placeholder="..."
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 form-group mb-5">
-                <label for="" class="col-form-label">Telefon</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="phone"
-                  id="phone"
-                  placeholder="..."
-                />
-              </div>
-              <div class="col-md-6 form-group mb-5">
-                <label for="" class="col-form-label">Companie</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="company"
-                  id="company"
-                  placeholder="..."
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 form-group mb-5">
-                <label for="message" class="col-form-label">Mesaj *</label>
-                <textarea
-                  class="form-control"
-                  name="message"
-                  id="message"
-                  cols="30"
-                  rows="4"
-                  placeholder="..."
-                ></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 form-group">
-                <input
-                  type="submit"
-                  value="Send Message"
-                  class="btn btn-primary rounded-0 py-2 px-4"
-                />
-                <span class="submitting"></span>
-              </div>
-            </div>
-          </form>
-          <div id="form-message-warning mt-4"></div>
-          <div id="form-message-success">Mesajul dvs a fost expediat cu succes,in curind va vom contacta,o zi buna.</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="contact-info h-100">
-          <h3>Informatie de contact</h3>
-          <p class="mb-5">
-        GMM BIOTECHNOLOGY
-          </p>
-          <ul class="list-unstyled">
-            <li class="d-flex">
-              <span class="wrap-icon icon-room mr-3"></span>
-              <span class="text"
-                >Bulevardul Stefan cel Mare si Sfint 65, Chisinau</span
-              >
-            </li>
-            <li class="d-flex">
-              <span class="wrap-icon icon-phone mr-3"></span>
-              <span class="text">+373 (60) 939 9321</span>
-            </li>
-            <li class="d-flex">
-              <span class="wrap-icon icon-envelope mr-3"></span>
-              <span class="text">info@gmmbiotechnology.md</span>
-            </li>
-          </ul>
-        </div>
+<div class="contact">
+  <div class="dualmod">
+    <div class="info">
+      <div class="block">
+        <span class="addr">
+          <img src={address} alt="" class="ico" />
+          <span class="desc">Telefon</span>
+        </span>
+        <span class="information">Chisinau Bul Stefan cel Mare 65</span>
+        <span class="addr">
+          <img src={phone} alt="" class="ico" />
+          <span class="desc">Telefon</span>
+        </span>
+        <span class="information">+373 078 545 612</span>
+        <span class="addr">
+          <img src={mail} alt="" class="ico" />
+          <span class="desc">Mail</span>
+        </span>
+        <span class="information">info@gmmbiotechnology.md</span>
       </div>
     </div>
+    <form class="info1">
+      <span class="text">Contacteaza-ne</span>
+      <input type="text" required placeholder="Nume Prenume" class="complect" />
+      <input type="text" required placeholder="Telefon" class="complect" />
+      <input type="text" required placeholder="Email" class="complect" />
+      <textarea type="text" placeholder="Mesaj" class="complect"></textarea>
+      <div type="submit" class="buton">Trimite</div>
+    </form>
   </div>
 </div>
-<div class="spacebottom"></div>
-<Footer/>
-
+<Footer />
 
 <style>
-    .spacebottom {
-        margin-bottom: 20px;
+  .information {
+    color: rgb(58, 192, 31);
+    margin-left: 35px;
+  }
+  .desc {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .ico {
+    width: 25px;
+    margin-right: 10px;
+  }
+  .addr {
+    color: white;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+  }
+  .buton {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(18, 142, 147);
+    background-color: rgb(18, 142, 147);
+    transition: 0.3s;
+
+    color: white;
+  }
+  .buton:hover {
+    color: rgb(18, 142, 147);
+    background-color: white;
+  }
+  .text {
+    font-size: 30px;
+  }
+  .complect {
+    width: 80%;
+    border: 1px solid rgb(223, 223, 223);
+    padding-inline: 10px;
+    resize: none;
+
+    display: flex;
+    outline: none;
+    align-items: center;
+    margin-block: 25px;
+    height: 50px;
+  }
+  .info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../lib/img/bk.jpg);
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* Adăugarea unui overlay întunecat */
+  .info::before {
+    content: ""; /* Necesar pentru a afișa pseudo-elementul */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.66); /* Ajustează opacitatea (0.5) pentru a controla întunecimea */
+    z-index: 1; /* Asigură-te că overlay-ul este deasupra imaginii de fundal și sub conținut */
+  }
+
+  /* Asigură-te că conținutul .info este vizibil peste overlay */
+  .info > * {
+    position: relative;
+    z-index: 2;
+  }
+  .info1 {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .dualmod {
+    width: 60%;
+    background-color: rgb(249, 249, 249);
+    height: 90%;
+
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (max-width: 1000px) {
+    .dualmod {
+      flex-direction: column;
     }
-    .content {
-        position: relative;
+    .info {
+      width: 100%;
     }
+    .info1 {
+      width: 100%;
+    }
+    .complect {
+      margin-block: 5px;
+    }
+  }
 </style>

@@ -3,6 +3,7 @@
   import teste from "$lib/img/teste.jpeg";
   import echipamente from "$lib/img/echipamente.png";
   import logo from "$lib/img/logo.png";
+  import {goto} from "$app/navigation"
 </script>
 
 <div class="container py-4">
@@ -16,7 +17,9 @@
         testare și echipamente de laborator, pentru a satisface nevoile variate
         ale spitalelor și laboratoarelor din Moldova.
       </p>
-      <button class="btn btn-primary btn-lg" type="button"
+      <button class="btn btn-primary btn-lg" type="button" on:click={() => {
+        goto("/contacte")
+      }}
         >Contacteaza-ne</button
       >
     </div>
@@ -53,37 +56,7 @@
 
   <footer class="pt-3 mt-4 text-muted border-top">© 2024</footer>
 </div>
-<main class="infoblock">
-  <h2 class="infoName">Ce oferim noi?</h2>
-  <div class="block">
-    <div class="produs">
-      <img src={medii} alt="" class="imgProdus" />
-      <span class="descriptionProdus"
-        >Mediile de cultură sunt substanțe care conțin nutrienți esențiali
-        pentru creșterea și dezvoltarea microorganismelor în laborator. Ele pot
-        fi solide (agar) sau lichide și sunt utilizate pentru izolarea,
-        identificarea și testarea sensibilității microorganismelor.</span
-      >
-    </div>
-    <div class="produs">
-      <img src={teste} alt="" class="imgProdus" />
-      <span class="descriptionProdus"
-        >Testele PCR (Reacția de Polimerizare în Lanț) sunt metode de diagnostic
-        molecular care detectează secvențe specifice de ADN sau ARN ale unui
-        agent patogen, oferind o modalitate rapidă și precisă de identificare a
-        infecțiilor.</span
-      >
-    </div>
-    <div class="produs">
-      <img src={echipamente} alt="" class="imgProdus" />
-      <span class="descriptionProdus">
-        Echipamentele de laborator includ o varietate de instrumente și
-        dispozitive, cum ar fi microscoape, centrifuge, pipete și autoclave,
-        folosite pentru experimente științifice, analize și cercetări.</span
-      >
-    </div>
-  </div>
-</main>
+
 
 <style>
   .descriptionProdus {
