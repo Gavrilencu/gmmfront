@@ -66,8 +66,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(18, 142, 147);
-    background-color: rgb(18, 142, 147);
+    border: 1px solid rgb(44, 118, 175);
+    background-color: rgb(44, 118, 175);
     transition: 0.3s;
 
     color: white;
@@ -95,8 +95,8 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    background-image: url(../../lib/img/bk.jpg);
-    background-position: center;
+    background-image: url(../../lib/img/adn.jpg);
+    background-position: right;
     position: relative;
     background-size: cover;
     justify-content: center;

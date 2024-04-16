@@ -4,7 +4,9 @@
   import Footer from "$lib/Footer.svelte";
   import sanimed from "$lib/img/sanimed.png";
   import cromagar from "$lib/img/cromagar.webp";
+  import partner1 from "$lib/img/partener1.webp";
   import procomcure from "$lib/img/procomcure.png";
+  import diag from "$lib/img/diag.png";
   import geneirst from "$lib/img/genefirst.jpg";
   import pure from "$lib/img/pure.png";
   import { onMount } from "svelte";
@@ -23,6 +25,12 @@
   <div class="partblock">
     <a href="https://sanimed.com.ua/" target="”_blank”" class="block">
       <img src={sanimed} alt="" class="imgpartenre" />
+    </a>
+    <a href="http://www.diagnostics.sk/" target="”_blank”" class="block">
+      <img src={diag} alt="" class="imgpartenre" />
+    </a>
+    <a href="https://www.tongzhoubio.com/" target="”_blank”" class="block">
+      <img src={partner1} alt="" class="imgpartenre" />
     </a>
     <a href="https://www.chromagar.com/en/" target="”_blank”" class="block">
       <img src={cromagar} alt="" class="imgpartenre" />
@@ -45,8 +53,8 @@
     width: 100%;
   }
   .block {
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
     overflow: hidden;
     border-radius: 5px;
     display: flex;

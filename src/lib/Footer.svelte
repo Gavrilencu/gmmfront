@@ -59,7 +59,7 @@
   }
   .all {
     width: 100%;
-    background: linear-gradient(60deg, #02b68f 0%, #114640 100%);
+    background: linear-gradient(60deg, #0a4970 0%, #155ada 100%);
     padding-bottom: 20px;
   }
   .copy {
