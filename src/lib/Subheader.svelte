@@ -64,7 +64,7 @@
       />
       <img
         on:click={() => {
-          goto("https://wa.me/078772200");
+          goto("https://wa.me/37378772200");
         }}
         src={whatsapp}
         alt=""
