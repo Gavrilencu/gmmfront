@@ -2,7 +2,9 @@
   import logo from "$lib/img/logo.png";
   import arrow from "$lib/img/bottom.png";
   import menu from "$lib/img/men.png";
-  import close from "$lib/img/close.png";
+  import facebook from "$lib/img/facebook.png";
+  import viber from "$lib/img/viber.png";
+  import linkedin from "$lib/img/linkedin.png";
 
   import { openMenu } from "$lib/index.js";
 
@@ -14,6 +16,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+
 <div class="container">
   <header
     class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0 "
@@ -51,11 +54,24 @@
         <a href="/partner" class="nav-link px-20 link-dark">Parteneri</a>
       </li>
     </ul>
+    <div class="info">
+      <img src={facebook} alt="" class="icon">
+      <img src={viber} alt="" class="icon">
+      <img src={linkedin} alt="" class="icon">
+    </div>
   </header>
 </div>
 
 <style>
-
+  .icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .icon:hover {
+   transform: scale3D(1.05,1.05,0.3);
+  }
   .nav-link {
     margin-left: 20px;
     font-size: 18px;
