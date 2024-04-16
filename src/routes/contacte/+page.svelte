@@ -44,7 +44,7 @@
 
 <style>
   .information {
-    color: rgb(58, 192, 31);
+    color: rgb(203, 203, 204);
     margin-left: 35px;
   }
   .desc {
@@ -112,7 +112,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.66); /* Ajustează opacitatea (0.5) pentru a controla întunecimea */
+    background: rgba(0, 0, 0, 0.405); /* Ajustează opacitatea (0.5) pentru a controla întunecimea */
     z-index: 1; /* Asigură-te că overlay-ul este deasupra imaginii de fundal și sub conținut */
   }
 
