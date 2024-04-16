@@ -5,8 +5,39 @@
   import phone from "../../lib/img/phone.png";
   import mail from "../../lib/img/email.png";
   import address from "../../lib/img/address.png";
+  let succes = false;
+  let name, email, telephone, message;
+  async function SendMessage() {
+  const response = await fetch("/api/sendEmail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: name,
+      mail: email,
+      phone: telephone,
+      message: message,
+    }),
+  });
+  const data = await response.json(); // Aici am corectat greșeala și am declarat variabila "success"
+  if (data.status === "ok") {
+    succes = true; // Aici atribuim valoarea "true" variabilei "success" corect
+  }
+}
+
+$: if(succes) {
+  setTimeout(() => {
+    succes = false
+  },5000)
+}
 </script>
 
+{#if succes}
+  <div class="all">
+    <div class="message">Mesaj trimis cu succes,in scurt timp va vom contacta.</div>
+  </div>
+{/if}
 <Subheader />
 <Header />
 <div class="contact">
@@ -30,19 +61,62 @@
         <span class="information">info@gmmbiotechnology.md</span>
       </div>
     </div>
-    <form class="info1">
+    <form class="info1" on:submit|preventDefault={SendMessage}>
       <span class="text">Contacteaza-ne</span>
-      <input type="text" required placeholder="Nume Prenume" class="complect" />
-      <input type="text" required placeholder="Telefon" class="complect" />
-      <input type="text" required placeholder="Email" class="complect" />
-      <textarea type="text" placeholder="Mesaj" class="complect"></textarea>
-      <div type="submit" class="buton">Trimite</div>
+      <input
+        type="text"
+        required
+        placeholder="Nume Prenume"
+        bind:value={name}
+        class="complect"
+      />
+      <input
+        type="text"
+        required
+        placeholder="Telefon"
+        bind:value={telephone}
+        class="complect"
+      />
+      <input
+        type="text"
+        required
+        placeholder="Email"
+        bind:value={email}
+        class="complect"
+      />
+      <textarea
+        type="text"
+        required
+        placeholder="Mesaj"
+        bind:value={message}
+        class="complect"
+      ></textarea>
+      <button type="submit" class="buton">Trimite</button>
     </form>
   </div>
 </div>
 <Footer />
 
 <style>
+  .message {
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+  .all {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.359);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
   .information {
     color: rgb(203, 203, 204);
     margin-left: 35px;
@@ -112,7 +186,12 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.405); /* Ajustează opacitatea (0.5) pentru a controla întunecimea */
+    background: rgba(
+      0,
+      0,
+      0,
+      0.405
+    ); /* Ajustează opacitatea (0.5) pentru a controla întunecimea */
     z-index: 1; /* Asigură-te că overlay-ul este deasupra imaginii de fundal și sub conținut */
   }
 
