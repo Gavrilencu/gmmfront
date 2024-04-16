@@ -23,6 +23,10 @@
   const data = await response.json(); // Aici am corectat greșeala și am declarat variabila "success"
   if (data.status === "ok") {
     succes = true; // Aici atribuim valoarea "true" variabilei "success" corect
+    name = "";
+    email = "";
+    telephone = "";
+    message = "";
   }
 }
 
