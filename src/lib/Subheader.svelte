@@ -3,11 +3,11 @@
   import arrow from "$lib/img/bottom.png";
   import menu from "$lib/img/men.png";
   import facebook from "$lib/img/facebook.png";
-  import viber from "$lib/img/viber.png";
+  import whatsapp from "$lib/img/whatsapp.png";
   import linkedin from "$lib/img/linkedin.png";
-
+  import gmail from "$lib/img/gmail.png";
+  import gmail2 from "$lib/img/googs.png";
   import { openMenu } from "$lib/index.js";
-
   import { goto } from "$app/navigation";
   let product = false;
 
@@ -19,7 +19,7 @@
 
 <div class="container">
   <header
-    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0 "
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0"
   >
     <a
       href="/"
@@ -46,7 +46,6 @@
           <li><a class="dropdown-item" href="/cromogen">Medii cromogene</a></li>
           <li><a class="dropdown-item" href="#">Medii nutriente</a></li>
           <li><a class="dropdown-item" href="#">Echipamente laborator</a></li>
-       
         </ul>
       </li>
       <li><a href="/contacte" class="nav-link px-20 link-dark">Contacte</a></li>
@@ -55,9 +54,40 @@
       </li>
     </ul>
     <div class="info">
-      <img src={facebook} alt="" class="icon">
-      <img src={viber} alt="" class="icon">
-      <img src={linkedin} alt="" class="icon">
+      <img
+        on:click={() => {
+          goto("https://www.facebook.com/people/GMM-Biotechnology/61558317789932/?mibextid=kFxxJD");
+        }}
+        src={facebook}
+        alt=""
+        class="icon"
+      />
+      <img
+        on:click={() => {
+          goto("https://wa.me/078772200");
+        }}
+        src={whatsapp}
+        alt=""
+        class="icon"
+      />
+      <img
+        on:click={() => {
+          goto("https://www.linkedin.com/in/gmm-biotechnology-465510304");
+        }}
+        src={linkedin}
+        alt=""
+        class="icon"
+      />
+      <img
+        on:click={() => {
+          goto(
+            "https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCBBXjqgsNZNJPfRLpBXkpMPdXGXSQzWJjKhHbntqFNtNcRPnpLlDpJMxMkktPNrfXpSvV"
+          );
+        }}
+        src={gmail2}
+        alt=""
+        class="icon"
+      />
     </div>
   </header>
 </div>
@@ -70,7 +100,7 @@
     transition: 0.3s;
   }
   .icon:hover {
-   transform: scale3D(1.05,1.05,0.3);
+    transform: scale3D(1.05, 1.05, 0.3);
   }
   .nav-link {
     margin-left: 20px;
