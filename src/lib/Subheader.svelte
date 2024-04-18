@@ -10,7 +10,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src={logo} alt="Logo" style="width: 130px;">
+      <img src={logo} alt="Logo" style="width: 150px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -80,5 +80,8 @@
   }
   .incons {
     margin-left: 30px;
+  }
+  .navbar {
+    padding-inline: 60px;
   }
 </style>
