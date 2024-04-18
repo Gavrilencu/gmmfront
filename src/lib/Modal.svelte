@@ -5,6 +5,7 @@
 
 <div class="modal-background" on:click={onClose}>
     <div class="modal-content" on:click|stopPropagation>
+        <button class="close-button" on:click={onClose}>&times;</button>
         <div class="infoblock">
             <h2>{product.name}</h2>
             <p class="category">Categorie: {product.category}</p>
@@ -13,7 +14,6 @@
                 Descriere: <span>{product.description}</span>
             </p>
         </div>
-
         {#if product.image}
             <img
                 src={`/${product.image}`}
@@ -42,11 +42,22 @@
         border-radius: 10px;
         box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         padding: 20px;
+        position: relative;
         display: flex;
         flex-direction: column;
         max-width: 95%;
         max-height: 95%;
         overflow-y: auto;
+    }
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        background: none;
+        color: #333;
+        font-size: 24px;
+        cursor: pointer;
     }
     .infoblock {
         margin-bottom: 20px;
@@ -60,6 +71,7 @@
         max-width: 100%;
         max-height: 300px;
         object-fit: contain;
+        margin-top: 20px;
     }
     h2 {
         font-size: 1.5rem;
@@ -74,6 +86,7 @@
         }
         .infoblock {
             flex: 1;
+            max-width: 50%;
         }
         .product-image {
             flex: 1;
