@@ -40,7 +40,7 @@
 
 <style>
   .carousel-inner, .carousel-item, .imageconfig {
-    height: 60vh !important;
+    height: 75vh !important;
     object-fit: cover;
     margin-top: 30px;
   }
