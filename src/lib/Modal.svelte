@@ -68,7 +68,7 @@
         margin-top: 5px;
     }
     .product-image {
-        max-width: 100%;
+   
         max-height: 300px;
         object-fit: contain;
         margin-top: 20px;
@@ -90,7 +90,7 @@
         }
         .product-image {
             flex: 1;
-            max-height: 100%;
+
         }
         h2 {
             font-size: 2rem;
