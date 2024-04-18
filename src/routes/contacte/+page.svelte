@@ -50,19 +50,19 @@ $: if(succes) {
       <div class="block">
         <span class="addr">
           <img src={address} alt="" class="ico" />
-          <span class="desc">Telefon</span>
+          <span class="desc">Adresa</span>
         </span>
-        <span class="information">Chisinau Bul Stefan cel Mare 65</span>
+        <span class="information">Chisinau</span>
         <span class="addr">
           <img src={phone} alt="" class="ico" />
           <span class="desc">Telefon</span>
         </span>
-        <span class="information">+373 078 545 612</span>
+        <span class="information">+373 078 772 200</span>
         <span class="addr">
           <img src={mail} alt="" class="ico" />
           <span class="desc">Mail</span>
         </span>
-        <span class="information">info@gmmbiotechnology.md</span>
+        <span class="information">gmmbiotechnology@gmail.com</span>
       </div>
     </div>
     <form class="info1" on:submit|preventDefault={SendMessage}>
