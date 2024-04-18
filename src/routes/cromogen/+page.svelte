@@ -49,6 +49,7 @@
     display: flex;
     justify-content: center;
     font-size: 35px;
+    margin-top: 35px;
     font-weight: 600;
     text-align: center;
   }
