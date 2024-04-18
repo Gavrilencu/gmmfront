@@ -1,98 +1,67 @@
 <script>
   import logo from "$lib/img/logo.png";
-  import arrow from "$lib/img/bottom.png";
-  import menu from "$lib/img/men.png";
   import facebook from "$lib/img/facebook.png";
   import whatsapp from "$lib/img/whatsapp.png";
   import linkedin from "$lib/img/linkedin.png";
-  import gmail from "$lib/img/gmail.png";
   import gmail2 from "$lib/img/googs.png";
-  import { openMenu } from "$lib/index.js";
   import { goto } from "$app/navigation";
-  let product = false;
-
-  // // categorii :medii de cultura,cromogene,teste pcr,echipamente de laborator,despre noi,produse,contacte,parteneri
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-
-<div class="container">
-  <header
-    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-0"
-  >
-    <a
-      href="/"
-      class="d-flex align-items-center col-md-4 mb-1 mb-md-1 text-dark text-decoration-none"
-    >
-      <img src={logo} class="bi me-2" alt="" style="width: 150px;" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src={logo} alt="Logo" style="width: 130px;">
     </a>
-
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li>
-        <a href="/about" class="nav-link px-20 link-dark">Despre noi</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-expanded="false">Produse</a
-        >
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/teste">Teste PCR</a></li>
-          <li><a class="dropdown-item" href="/teste">Teste Rapide</a></li>
-          <li><a class="dropdown-item" href="/cromogen">Medii cromogene</a></li>
-          <li><a class="dropdown-item" href="#">Medii nutriente</a></li>
-          <li><a class="dropdown-item" href="#">Echipamente laborator</a></li>
-        </ul>
-      </li>
-      <li><a href="/contacte" class="nav-link px-20 link-dark">Contacte</a></li>
-      <li>
-        <a href="/partner" class="nav-link px-20 link-dark">Parteneri</a>
-      </li>
-    </ul>
-    <div class="info">
-      <img
-        on:click={() => {
-          goto("https://www.facebook.com/people/GMM-Biotechnology/61558317789932/?mibextid=kFxxJD");
-        }}
-        src={facebook}
-        alt=""
-        class="icon"
-      />
-      <img
-        on:click={() => {
-          goto("https://wa.me/37378772200");
-        }}
-        src={whatsapp}
-        alt=""
-        class="icon"
-      />
-      <img
-        on:click={() => {
-          goto("https://www.linkedin.com/in/gmm-biotechnology-465510304");
-        }}
-        src={linkedin}
-        alt=""
-        class="icon"
-      />
-      <img
-        on:click={() => {
-          goto(
-            "https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCBBXjqgsNZNJPfRLpBXkpMPdXGXSQzWJjKhHbntqFNtNcRPnpLlDpJMxMkktPNrfXpSvV"
-          );
-        }}
-        src={gmail2}
-        alt=""
-        class="icon"
-      />
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-0 mb-lg-0 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Despre noi</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Produse
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/teste">Teste PCR</a></li>
+            <li><a class="dropdown-item" href="/teste">Teste Rapide</a></li>
+            <li><a class="dropdown-item" href="/cromogen">Medii cromogene</a></li>
+            <li><a class="dropdown-item" href="#">Medii nutriente</a></li>
+            <li><a class="dropdown-item" href="#">Echipamente laborator</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacte">Contacte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/partner">Parteneri</a>
+        </li>
+        <li class="nav-item d-flex align-items-center incons">
+          <a href="https://www.facebook.com/people/GMM-Biotechnology/61558317789932/?mibextid=kFxxJD" target="_blank">
+            <img src={facebook} alt="Facebook" class="icon mx-1">
+          </a>
+          <a href="https://wa.me/37378772200" target="_blank">
+            <img src={whatsapp} alt="WhatsApp" class="icon mx-1">
+          </a>
+          <a href="www.linkedin.com/in/gmm-biotechnology-465510304" target="_blank">
+            <img src={linkedin} alt="LinkedIn" class="icon mx-1">
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCBBXjqgsNZNJPfRLpBXkpMPdXGXSQzWJjKhHbntqFNtNcRPnpLlDpJMxMkktPNrfXpSvV" target="_blank">
+            <img src={gmail2} alt="Gmail" class="icon mx-1">
+          </a>
+        </li>
+      </ul>
     </div>
-  </header>
-</div>
+  </div>
+</nav>
 
 <style>
+  .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
   .icon {
     width: 30px;
     height: 30px;
@@ -100,11 +69,16 @@
     transition: 0.3s;
   }
   .icon:hover {
-    transform: scale3D(1.05, 1.05, 0.3);
+    transform: scale(1.05);
   }
-  .nav-link {
-    margin-left: 20px;
-    font-size: 18px;
-    color: black;
+  .nav-link:hover {
+    color: #007bff; /* Bootstrap primary color */
+  }
+  .dropdown-menu-end {
+    right: 0;
+    left: auto; /* Aligns the dropdown to the right side of the dropdown button */
+  }
+  .incons {
+    margin-left: 30px;
   }
 </style>
