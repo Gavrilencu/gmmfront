@@ -134,4 +134,8 @@
     box-shadow: 0px 0px 10px rgba(24, 221, 47, 0.415);
     transform: scale3d(1.03, 1.03, 0.3);
   }
+  .card-text {
+    font-weight: 700;
+    font-size: 18px;
+  }
 </style>
