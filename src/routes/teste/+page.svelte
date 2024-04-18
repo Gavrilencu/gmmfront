@@ -44,6 +44,7 @@
 
 <style>
   .text {
+    margin-top: 50px;
     width: 100%;
     font-family: "Lato", sans-serif;
     display: flex;
@@ -56,7 +57,7 @@
     width: 90%;
   }
   .newProducts {
-    margin-top: 100px;
+    margin-top: 50px;
     padding-inline: 150px;
     display: flex;
     flex-wrap: wrap;
