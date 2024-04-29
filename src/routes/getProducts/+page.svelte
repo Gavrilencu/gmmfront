@@ -8,6 +8,12 @@
     async function fetchProducts() {
         const response = await fetch("/api/products");
         products = await response.json();
+        // Decodăm fiecare imagine a produselor pentru a fi afișată
+        products.forEach(product => {
+            if (product.image) {
+                product.imageUrl = `data:image/jpeg;base64,${product.image}`;
+            }
+        });
     }
 
     onMount(() => {
@@ -32,7 +38,6 @@
 
     async function updateProduct(product) {
         const formData = new FormData();
-        // Populăm formData cu proprietățile produsului, inclusiv imaginea dacă este cazul
         formData.append('name', product.name);
         formData.append('code', product.code);
         formData.append('description', product.description);
@@ -56,6 +61,7 @@
     }
 </script>
 
+
 <nav>
     <a href="/">Pagina principala</a>
     <a href="getProducts">Vizualizați Produsele</a>
@@ -71,7 +77,9 @@
             <div class="product-box" on:click={() => showProductDetails(product)}>
                 <h4>{product.name}</h4>
                 <p>Cod: {product.code}</p>
-                <!-- Adăugați și alte detalii ale produsului, dacă este necesar -->
+                {#if product.imageUrl}
+                    <img src={product.imageUrl} alt={`Imaginea produsului ${product.name}`} class="product-image"/>
+                {/if}
             </div>
         {/each}
     </div>
@@ -102,4 +110,9 @@
     h3 {
         margin-top: 30px;
     }
+    .product-image {
+        max-width: 100%; 
+        height: auto;
+    }
 </style>
+

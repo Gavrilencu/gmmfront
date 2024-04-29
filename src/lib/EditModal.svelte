@@ -9,7 +9,8 @@
     let imageFile;
 
     // URL pentru previzualizarea imaginii
-    let imageUrl = product.image || '';  // presupunem că 'image' este un URL
+    // Dacă product.image conține un string Base64, construiește URL-ul pentru a putea fi afișat în <img>
+    let imageUrl = product.image ? `data:image/jpeg;base64,${product.image}` : ''; 
 
     function saveChanges() {
         const formData = new FormData();
@@ -49,7 +50,7 @@
     function handleFileChange(event) {
         imageFile = event.target.files[0];
         if (imageFile) {
-            imageUrl = URL.createObjectURL(imageFile);
+            imageUrl = URL.createObjectURL(imageFile);  // Creați un URL temporar pentru a afișa previzualizarea fișierului încărcat
         }
     }
 </script>

@@ -9,7 +9,12 @@
 
   onMount(async () => {
     const response = await fetch("/api/products/pcr");
-    products = await response.json();
+    const data = await response.json();
+    products = data.map(product => ({
+      ...product,
+      // Presupunem că imaginea este codificată în Base64 și direct primită ca atare
+      image: `data:image/jpeg;base64,${product.image}`
+    }));
   });
 
   function showProductDetails(product) {
@@ -19,8 +24,9 @@
   function closeProductDetails() {
     selectedProduct = null;
   }
-
 </script>
+
+
 
 
 
@@ -29,11 +35,11 @@
 <span class="text">Teste PCR</span>
 <div class="newProducts">
   {#each products as product}
-  <div class="card" style="width: 18rem;margin:15px; justify-content:space-between;" on:click={() => showProductDetails(product)} type="button" data-toggle="modal" data-target="#exampleModalCenter">
-    <img src={`/${product.image}`} class="card-img-top" alt="...">
-
-      <p class="card-text" style="text-align: center;">{product.name}</p>
- 
+  <div class="card" style="width: 18rem; margin: 15px; justify-content: space-between;" on:click={() => showProductDetails(product)} type="button" data-toggle="modal" data-target="#exampleModalCenter">
+    {#if product.image}
+      <img src={product.image} class="card-img-top" alt={product.name}>
+    {/if}
+    <p class="card-text" style="text-align: center;">{product.name}</p>
   </div>
   {/each}
 </div>
@@ -41,6 +47,8 @@
   <Modal product={selectedProduct} onClose={closeProductDetails} />
 {/if}
 <Footer />
+
+
 
 <style>
   .text {
